@@ -1,0 +1,29 @@
+query ValueAgent($ticker: String!) {
+  latestAgentSignal(ticker: $ticker, agent: "value_agent") {
+    agent
+    signal
+    reasoning
+    confidence
+    biz_date
+  }
+}
+
+query TechnicalAgent($ticker: String!) {
+  latestAgentSignal(ticker: $ticker, agent: "technical_agent") {
+    agent
+    signal
+    reasoning
+    confidence
+    biz_date
+  }
+}
+
+query SentimentAgent($ticker: String!) {
+  latestAgentSignal(ticker: $ticker, agent: "sentiment_agent") {
+    agent
+    signal
+    reasoning
+    confidence
+    biz_date
+  }
+} 

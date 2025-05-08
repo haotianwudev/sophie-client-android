@@ -1,5 +1,6 @@
 package com.example.sophieaianalyst.ui.screens.home
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
@@ -133,6 +134,28 @@ class HomeViewModel(
                 searchResults = emptyList(),
                 isSearchActive = false
             )
+        }
+    }
+    
+    /**
+     * Test GraphQL server connection
+     */
+    fun testServerConnection() {
+        viewModelScope.launch {
+            _uiState.update { it.copy(isLoading = true) }
+            try {
+                Log.d("HomeViewModel", "Testing GraphQL server connection")
+                val stocks = stockRepository.getTrendingStocks()
+                if (stocks.isNotEmpty()) {
+                    Log.d("HomeViewModel", "Successfully connected to GraphQL server!")
+                } else {
+                    Log.d("HomeViewModel", "Connection test returned empty data")
+                }
+            } catch (e: Exception) {
+                Log.e("HomeViewModel", "Failed to connect to GraphQL server: ${e.message}", e)
+            } finally {
+                _uiState.update { it.copy(isLoading = false) }
+            }
         }
     }
     

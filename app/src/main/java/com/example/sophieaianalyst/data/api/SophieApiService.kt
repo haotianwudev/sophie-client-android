@@ -28,4 +28,9 @@ interface SophieApiService {
      * Get AI agent signals for a stock
      */
     suspend fun getAgentSignals(ticker: String): List<AgentSignal>
+    
+    /**
+     * Search for stocks by query
+     */
+    suspend fun searchStocks(query: String): List<Stock>
 } 

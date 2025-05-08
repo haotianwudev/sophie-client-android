@@ -286,6 +286,23 @@ class MockSophieApi : SophieApiService {
     }
     
     /**
+     * Search for stocks by query
+     */
+    override suspend fun searchStocks(query: String): List<Stock> {
+        delay(500) // Add delay to simulate network request
+        
+        // If query is empty, return empty list
+        if (query.isEmpty()) return emptyList()
+        
+        // Filter trending stocks that match the query (case insensitive)
+        val queryLower = query.lowercase()
+        return trendingStocks.filter { 
+            it.ticker.lowercase().contains(queryLower) || 
+            it.name.lowercase().contains(queryLower)
+        }
+    }
+    
+    /**
      * Generate agent signals for a given stock
      */
     private fun getAgentSignalsForStock(ticker: String): List<AgentSignal> {

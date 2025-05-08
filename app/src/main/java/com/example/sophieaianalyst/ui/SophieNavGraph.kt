@@ -2,13 +2,16 @@ package com.example.sophieaianalyst.ui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.example.sophieaianalyst.ui.screens.details.DetailsScreen
+import com.example.sophieaianalyst.ui.screens.diagnostics.ConnectionDiagnosticsScreen
 import com.example.sophieaianalyst.ui.screens.home.HomeScreen
+import com.example.sophieaianalyst.ui.screens.home.HomeViewModel
 
 /**
  * Navigation destinations for the app
@@ -18,6 +21,7 @@ object SophieDestinations {
     const val STOCK_DETAILS_ROUTE = "stock"
     const val STOCK_DETAILS_ARG = "ticker"
     const val STOCK_DETAILS_FULL_ROUTE = "$STOCK_DETAILS_ROUTE/{$STOCK_DETAILS_ARG}"
+    const val DIAGNOSTICS_ROUTE = "diagnostics"
     
     fun stockDetailsRoute(ticker: String) = "$STOCK_DETAILS_ROUTE/$ticker"
 }
@@ -30,6 +34,9 @@ fun SophieNavGraph(
     navController: NavHostController,
     modifier: Modifier = Modifier
 ) {
+    // Create shared ViewModel using the Factory
+    val homeViewModel: HomeViewModel = viewModel(factory = HomeViewModel.Factory)
+    
     NavHost(
         navController = navController,
         startDestination = SophieDestinations.HOME_ROUTE,
@@ -38,8 +45,12 @@ fun SophieNavGraph(
         // Home screen
         composable(SophieDestinations.HOME_ROUTE) {
             HomeScreen(
+                viewModel = homeViewModel,
                 onStockClick = { ticker ->
                     navController.navigate(SophieDestinations.stockDetailsRoute(ticker))
+                },
+                onDiagnosticsClick = {
+                    navController.navigate(SophieDestinations.DIAGNOSTICS_ROUTE)
                 }
             )
         }
@@ -58,6 +69,14 @@ fun SophieNavGraph(
             
             DetailsScreen(
                 ticker = ticker,
+                onBackClick = { navController.popBackStack() }
+            )
+        }
+        
+        // Diagnostics screen
+        composable(SophieDestinations.DIAGNOSTICS_ROUTE) {
+            ConnectionDiagnosticsScreen(
+                homeViewModel = homeViewModel,
                 onBackClick = { navController.popBackStack() }
             )
         }

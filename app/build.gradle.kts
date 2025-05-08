@@ -2,6 +2,15 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
+    id("com.apollographql.apollo3").version("3.8.2")
+}
+
+// Add Apollo GraphQL configuration
+apollo {
+    service("sophie") {
+        packageName.set("com.example.sophieaianalyst.data.graphql")
+        generateKotlinModels.set(true)
+    }
 }
 
 android {
@@ -77,6 +86,10 @@ dependencies {
     // DataStore for preferences
     implementation("androidx.datastore:datastore-preferences:1.0.0")
     implementation("androidx.datastore:datastore:1.0.0")
+    
+    // Apollo GraphQL
+    implementation("com.apollographql.apollo3:apollo-runtime:3.8.2")
+    implementation("com.apollographql.apollo3:apollo-api:3.8.2")
     
     // Coil for image loading
     implementation("io.coil-kt:coil-compose:2.5.0")

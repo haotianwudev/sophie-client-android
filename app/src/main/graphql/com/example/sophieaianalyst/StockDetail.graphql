@@ -1,0 +1,39 @@
+query StockDetail($ticker: String!) {
+  stock(ticker: $ticker) {
+    company {
+      ticker
+      name
+      sector
+      industry
+      market_cap
+    }
+  }
+  latestFundamentals(ticker: $ticker) {
+    pe_ratio
+    earnings_per_share
+    debt_to_equity
+    overall_signal
+    confidence
+  }
+  latestTechnicals(ticker: $ticker) {
+    signal
+    confidence
+    rsi_14
+    ema_8
+    ema_21
+    ema_55
+    volume_ratio
+  }
+  latestSophieAnalysis(ticker: $ticker) {
+    signal
+    confidence
+    overall_score
+    reasoning
+    short_term_outlook
+    medium_term_outlook
+    long_term_outlook
+    bullish_factors
+    bearish_factors
+    risks
+  }
+} 

@@ -1,0 +1,23 @@
+query BatchStocks($tickers: [String!]!, $start_date: String, $end_date: String) {
+  batchStocks(tickers: $tickers, start_date: $start_date, end_date: $end_date) {
+    ticker
+    company {
+      ticker
+      name
+      sector
+      industry
+      market_cap
+    }
+    prices {
+      biz_date
+      close
+      change: close
+      volume
+    }
+    latestSophieAnalysis {
+      signal
+      confidence
+      overall_score
+    }
+  }
+} 

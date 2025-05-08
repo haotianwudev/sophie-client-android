@@ -1,0 +1,14 @@
+query SophieAnalysis($ticker: String!) {
+  latestSophieAnalysis(ticker: $ticker) {
+    signal
+    confidence
+    overall_score
+    reasoning
+    short_term_outlook
+    medium_term_outlook
+    long_term_outlook
+    bullish_factors
+    bearish_factors
+    risks
+  }
+} 

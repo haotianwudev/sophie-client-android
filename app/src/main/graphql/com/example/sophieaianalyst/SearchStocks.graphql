@@ -1,0 +1,6 @@
+query SearchStocks($query: String!) {
+  searchStocks(query: $query) {
+    ticker
+    name
+  }
+} 

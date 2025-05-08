@@ -1,0 +1,7 @@
+# Get trending stocks using coveredTickers and batchStocks
+query TrendingStocks($limit: Int = 10) {
+  coveredTickers(top: $limit) {
+    ticker
+    score
+  }
+} 
