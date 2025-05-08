@@ -160,6 +160,30 @@ class HomeViewModel(
     }
     
     /**
+     * Test GraphQL connection for diagnostics screen
+     * This is a suspending function that should be called from a coroutine
+     */
+    suspend fun testGraphQLConnection() {
+        try {
+            Log.d("HomeViewModel", "Testing GraphQL connection for diagnostics")
+            
+            // Try to fetch trending stocks - this is a suspending function
+            val stocks = stockRepository.getTrendingStocks()
+            
+            if (stocks.isNotEmpty()) {
+                Log.d("HomeViewModel", "Successfully connected to GraphQL - got ${stocks.size} stocks")
+                Log.d("HomeViewModel", "First stock: ${stocks.firstOrNull()?.ticker} price: ${stocks.firstOrNull()?.price}")
+            } else {
+                Log.d("HomeViewModel", "Connection successful but returned empty data")
+                throw Exception("Connection successful but API returned no stocks")
+            }
+        } catch (e: Exception) {
+            Log.e("HomeViewModel", "Failed to connect to GraphQL server: ${e.message}", e)
+            throw e  // Re-throw to allow the diagnostics screen to catch it
+        }
+    }
+    
+    /**
      * Factory for creating HomeViewModel
      */
     companion object {

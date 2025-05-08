@@ -1,7 +1,29 @@
 # Get trending stocks using coveredTickers and batchStocks
-query TrendingStocks($limit: Int = 10) {
+query TrendingStocks($limit: Int = 10, $start_date: String, $end_date: String) {
   coveredTickers(top: $limit) {
     ticker
     score
+  }
+  # Include batch stocks data directly in the trending stocks query
+  # This will be used by the GraphQLSophieApi to get complete stock data
+  batchStocks(tickers: ["AAPL", "MSFT", "GOOGL", "AMZN", "META", "NVDA", "TSLA", "AMD"], start_date: $start_date, end_date: $end_date) {
+    ticker
+    company {
+      ticker
+      name
+    }
+    prices {
+      biz_date
+      open
+      high
+      low
+      close
+      volume
+    }
+    latestSophieAnalysis {
+      signal
+      confidence
+      overall_score
+    }
   }
 } 

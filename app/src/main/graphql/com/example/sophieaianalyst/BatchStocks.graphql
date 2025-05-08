@@ -10,8 +10,10 @@ query BatchStocks($tickers: [String!]!, $start_date: String, $end_date: String) 
     }
     prices {
       biz_date
+      open
+      high
+      low
       close
-      change: close
       volume
     }
     latestSophieAnalysis {

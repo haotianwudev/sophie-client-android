@@ -7,6 +7,14 @@ query StockDetail($ticker: String!) {
       industry
       market_cap
     }
+    prices(start_date: "2023-01-01", end_date: "2025-12-31") {
+      biz_date
+      open
+      high
+      low
+      close
+      volume
+    }
   }
   latestFundamentals(ticker: $ticker) {
     pe_ratio

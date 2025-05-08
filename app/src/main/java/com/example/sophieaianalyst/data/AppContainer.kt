@@ -18,7 +18,7 @@ interface AppContainer {
  * Default implementation of [AppContainer]
  */
 class DefaultAppContainer(private val applicationContext: Context) : AppContainer {
-    // Toggle this flag to switch between mock and GraphQL implementations
+    // Using the real GraphQL API instead of mock data
     private val useMockApi = false
     
     private val apiService: SophieApiService by lazy {
