@@ -1,0 +1,4 @@
+#Wed May 07 21:19:25 EDT 2025
+base.0=F\:\\workspace\\sophie-client-android\\instantapp\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+path.0=0/classes.dex
+renamed.0=classes.dex

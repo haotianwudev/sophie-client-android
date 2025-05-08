@@ -1,0 +1,81 @@
+-- Merging decision tree log ---
+manifest
+ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:2:1-42:12
+	package
+		INJECTED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml
+	xmlns:dist
+		ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:3:5-61
+	android:versionCode
+		INJECTED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:2:11-69
+dist:module
+ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:5:5-12:19
+	dist:instant
+		ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:6:9-28
+	dist:title
+		ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:7:9-46
+dist:delivery
+ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:8:9-10:25
+dist:install-time
+ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:9:13-34
+dist:fusing
+ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:11:9-44
+	dist:include
+		ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:11:22-41
+application
+ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:14:5-41:19
+INJECTED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:14:5-41:19
+	android:extractNativeLibs
+		INJECTED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml
+activity#com.example.sophieaianalyst.MainActivity
+ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:15:9-27:20
+	android:exported
+		ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:17:13-36
+	android:name
+		ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:16:13-68
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:sophieaianalyst.example.com+data:pathPattern:/stocks.*+data:scheme:https
+ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:18:13-26:29
+	android:autoVerify
+		ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:18:28-53
+action#android.intent.action.VIEW
+ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:19:17-69
+	android:name
+		ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:19:25-66
+category#android.intent.category.DEFAULT
+ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:20:17-76
+	android:name
+		ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:20:27-73
+category#android.intent.category.BROWSABLE
+ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:21:17-78
+	android:name
+		ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:21:27-75
+data
+ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:22:17-25:55
+	android:host
+		ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:24:21-63
+	android:scheme
+		ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:23:21-43
+	android:pathPattern
+		ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:25:21-52
+activity#com.example.sophieaianalyst.StockDetailActivity
+ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:28:9-40:20
+	android:exported
+		ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:30:13-36
+	android:name
+		ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:29:13-75
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:sophieaianalyst.example.com+data:pathPattern:/stocks/.*+data:scheme:https
+ADDED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml:31:13-39:29
+uses-sdk
+INJECTED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml
+INJECTED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from F:\workspace\sophie-client-android\instantapp\src\main\AndroidManifest.xml

@@ -1,0 +1,1 @@
+:instantapp::debug;Capability: group='SOPHIE AI Analyst', name='instantapp'

@@ -1,0 +1,2 @@
+-keep class com.example.sophieaianalyst.MainActivity { <init>(); }
+-keep class com.example.sophieaianalyst.StockDetailActivity { <init>(); }
